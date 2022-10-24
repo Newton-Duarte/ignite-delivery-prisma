@@ -19,9 +19,10 @@ model Deliveryman {
 }
 
 model Clients {
-  id       String @id @default(uuid())
-  username String @unique
-  password String
+  id         String       @id @default(uuid())
+  username   String       @unique
+  password   String
+  deliveries Deliveries[]
 
   @@map("clients")
 }
