@@ -25,3 +25,16 @@ model Clients {
 
   @@map("clients")
 }
+
+model Deliveries {
+  id             String      @id @default(uuid())
+  item_name      String
+  client         Clients     @relation(fields: [client_id], references: [id])
+  client_id      String
+  deliveryman    Deliveryman @relation(fields: [deliveryman_id], references: [id])
+  deliveryman_id String
+  created_at     DateTime    @default(now())
+  end_at         DateTime
+
+  @@map("deliveries")
+}
