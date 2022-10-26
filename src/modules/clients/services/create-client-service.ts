@@ -11,6 +11,7 @@ export class CreateClientService {
     const clientAlreadyExists = await prisma.clients.findFirst({
       where: {
         username: {
+          equals: username,
           mode: 'insensitive'
         }
       }
