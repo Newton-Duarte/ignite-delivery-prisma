@@ -22,7 +22,6 @@ export function ensureClientAuthenticated(
   try {
     const { sub } = verify(token, String(jwt.secret)) as IPayload;
     request.client_id = sub;
-    console.log(sub);
     return next();
   } catch (error) {
     return response.status(401).json({ message: 'Invalid token' });
