@@ -27,7 +27,7 @@ export class AuthenticateClientService {
     }
 
     const token = await sign({ username }, String(jwt.secret), {
-      subject: username,
+      subject: client.id,
       expiresIn: '1d'
     });
 
