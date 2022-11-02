@@ -20,7 +20,7 @@ export function ensureClientAuthenticated(
   const [, token] = authHeader.split(' ');
 
   try {
-    const { sub } = verify(token, String(jwt.secret)) as IPayload;
+    const { sub } = verify(token, String(jwt.secret_client)) as IPayload;
     request.client_id = sub;
     return next();
   } catch (error) {

@@ -26,7 +26,7 @@ export class AuthenticateClientService {
       throw new Error('Invalid credentials!');
     }
 
-    const token = await sign({ username }, String(jwt.secret), {
+    const token = await sign({ username }, String(jwt.secret_client), {
       subject: client.id,
       expiresIn: '1d'
     });

@@ -29,8 +29,8 @@ export class AuthenticateDeliverymanService {
       throw new Error('Invalid credentials!');
     }
 
-    const token = await sign({ username }, String(jwt.secret), {
-      subject: username,
+    const token = await sign({ username }, String(jwt.secret_deliveryman), {
+      subject: deliveryman.id,
       expiresIn: '1d'
     });
 
