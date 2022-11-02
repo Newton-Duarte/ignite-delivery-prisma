@@ -21,5 +21,6 @@ routes.post('/deliverymen', deliverymanController.create);
 routes.post('/deliverymen/authenticate', authenticateDeliverymanController.create);
 routes.get('/deliveries', ensureDeliverymanAuthenticated, deliveriesController.index);
 routes.post('/deliveries', ensureClientAuthenticated, deliveriesController.create);
+routes.put('/deliveries/:delivery_id', ensureDeliverymanAuthenticated, deliveriesController.update);
 
 export { routes };
