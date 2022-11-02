@@ -4,7 +4,7 @@ import { AuthenticateDeliverymanController } from './modules/authenticate/authen
 import { DeliverymanController } from './modules/deliveryman/controllers/deliveryman-controller';
 import { ClientController } from './modules/clients/controllers/client-controller';
 import { ensureClientAuthenticated } from './middlewares/ensureClientAuthenticated';
-import { DeliveriesController } from './modules/deliveries/controllers/deliveres-controller';
+import { DeliveriesController } from './modules/deliveries/controllers/deliveries-controller';
 import { ensureDeliverymanAuthenticated } from './middlewares/ensureDeliverymanAuthenticated';
 
 const routes = Router();
