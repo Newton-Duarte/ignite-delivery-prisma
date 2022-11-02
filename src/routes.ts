@@ -7,6 +7,7 @@ import { ensureClientAuthenticated } from './middlewares/ensureClientAuthenticat
 import { DeliveriesController } from './modules/deliveries/controllers/deliveries-controller';
 import { ensureDeliverymanAuthenticated } from './middlewares/ensureDeliverymanAuthenticated';
 import { ClientDeliveriesController } from './modules/clients/controllers/client-deliveries-controller';
+import { DeliverymanDeliveriesController } from './modules/deliveryman/controllers/deliveryman-deliveries-controller';
 
 const routes = Router();
 
@@ -15,12 +16,14 @@ const authenticateDeliverymanController = new AuthenticateDeliverymanController(
 const clientController = new ClientController();
 const clientDeliveriesController = new ClientDeliveriesController();
 const deliverymanController = new DeliverymanController();
+const deliverymanDeliveriesController = new DeliverymanDeliveriesController();
 const deliveriesController = new DeliveriesController();
 
 routes.get('/clients/deliveries', ensureClientAuthenticated, clientDeliveriesController.index);
 routes.post('/clients', clientController.create);
 routes.post('/clients/authenticate', authenticateClientController.create);
 
+routes.get('/deliverymen/deliveries', ensureDeliverymanAuthenticated, deliverymanDeliveriesController.index);
 routes.post('/deliverymen', deliverymanController.create);
 routes.post('/deliverymen/authenticate', authenticateDeliverymanController.create);
 
