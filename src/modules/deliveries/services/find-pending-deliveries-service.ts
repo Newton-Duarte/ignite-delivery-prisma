@@ -1,6 +1,6 @@
 import { prisma } from "../../../database/prisma";
 
-export class FindPendingDeliveries {
+export class FindPendingDeliveriesService {
   async execute() {
     const pendingDeliveries = await prisma.deliveries.findMany({
       where: {

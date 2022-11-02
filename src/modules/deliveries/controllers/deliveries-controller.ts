@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 import { CreateDeliveryService } from "../services/create-delivery-service";
-import { FindPendingDeliveries } from "../services/find-pending-deliveries";
+import { FindPendingDeliveriesService } from "../services/find-pending-deliveries-service";
 import { UpdateDeliveryService } from "../services/update-delivery-service";
 
 export class DeliveriesController {
   async index(request: Request, response: Response) {
-    const findPendingDeliveriesService = new FindPendingDeliveries();
+    const findPendingDeliveriesService = new FindPendingDeliveriesService();
     const pendingDeliveries = await findPendingDeliveriesService.execute();
     return response.json(pendingDeliveries);
   }
