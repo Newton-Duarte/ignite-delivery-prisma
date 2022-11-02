@@ -20,4 +20,15 @@ export class DeliveriesController {
 
     return response.status(201).json(delivery);
   }
+
+  async update(request: Request, response: Response) {
+    const { delivery_id } = request.params;
+    const { deliveryman_id } = request;
+
+    const updateDeliveryService = new UpdateDeliveryService();
+
+    const updatedDelivery = await updateDeliveryService.execute({ delivery_id, deliveryman_id });
+
+    return response.status(201).json(updatedDelivery);
+  }
 }
