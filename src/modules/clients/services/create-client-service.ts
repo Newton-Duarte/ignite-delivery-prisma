@@ -4,10 +4,11 @@ import { prisma } from "../../../database/prisma";
 interface ICreateClient {
   username: string;
   password: string;
+  address: string;
 }
 
 export class CreateClientService {
-  async execute({ username, password }: ICreateClient) {
+  async execute({ username, password, address }: ICreateClient) {
     const clientAlreadyExists = await prisma.clients.findFirst({
       where: {
         username: {
@@ -27,6 +28,7 @@ export class CreateClientService {
       data: {
         username,
         password: hashPassword,
+        address
       }
     });
 
