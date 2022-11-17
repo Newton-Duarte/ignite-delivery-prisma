@@ -31,6 +31,6 @@ export class AuthenticateClientService {
       expiresIn: '1d'
     });
 
-    return token;
+    return { user: { id: client.id, name: client.name, username: client.username, address: client.address }, token };
   }
 }
