@@ -34,6 +34,6 @@ export class AuthenticateDeliverymanService {
       expiresIn: '1d'
     });
 
-    return token;
+    return { user: { id: deliveryman.id, name: deliveryman.name, username: deliveryman.username }, token };
   }
 }
