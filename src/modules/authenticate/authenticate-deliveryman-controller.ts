@@ -7,8 +7,8 @@ export class AuthenticateDeliverymanController {
 
     const authenticateService = new AuthenticateDeliverymanService();
 
-    const token = await authenticateService.execute({ username, password });
+    const result = await authenticateService.execute({ username, password });
 
-    return response.json({ token });
+    return response.json(result);
   }
 }
