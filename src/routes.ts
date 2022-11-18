@@ -24,6 +24,7 @@ const finalizeDeliveriesController = new FinalizeDeliveryController();
 routes.get('/clients/deliveries', ensureClientAuthenticated, clientDeliveriesController.index);
 routes.post('/clients', clientController.create);
 routes.post('/clients/authenticate', authenticateClientController.create);
+routes.get('/clients/me', ensureClientAuthenticated, clientController.index);
 
 routes.get('/deliverymen/deliveries', ensureDeliverymanAuthenticated, deliverymanDeliveriesController.index);
 routes.post('/deliverymen', deliverymanController.create);
