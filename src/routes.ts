@@ -29,6 +29,7 @@ routes.get('/clients/me', ensureClientAuthenticated, clientController.index);
 routes.get('/deliverymen/deliveries', ensureDeliverymanAuthenticated, deliverymanDeliveriesController.index);
 routes.post('/deliverymen', deliverymanController.create);
 routes.post('/deliverymen/authenticate', authenticateDeliverymanController.create);
+routes.get('/deliverymen/me', ensureDeliverymanAuthenticated, deliverymanController.index);
 
 routes.get('/deliveries', ensureDeliverymanAuthenticated, deliveriesController.index);
 routes.post('/deliveries', ensureClientAuthenticated, deliveriesController.create);
