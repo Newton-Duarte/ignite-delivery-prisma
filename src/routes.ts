@@ -31,7 +31,7 @@ routes.post('/deliverymen', deliverymanController.create);
 routes.post('/deliverymen/authenticate', authenticateDeliverymanController.create);
 routes.get('/deliverymen/me', ensureDeliverymanAuthenticated, deliverymanController.index);
 
-routes.get('/deliveries', ensureDeliverymanAuthenticated, deliveriesController.index);
+routes.get('/deliveries', deliveriesController.index);
 routes.post('/deliveries', ensureClientAuthenticated, deliveriesController.create);
 routes.put('/deliveries/:delivery_id', ensureDeliverymanAuthenticated, deliveriesController.update);
 routes.patch('/deliveries/:delivery_id', ensureDeliverymanAuthenticated, finalizeDeliveriesController.update);
