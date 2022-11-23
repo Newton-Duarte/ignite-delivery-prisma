@@ -6,6 +6,9 @@ export class FindPendingDeliveriesService {
       where: {
         end_at: null,
         deliveryman_id: null
+      },
+      include: {
+        client: true
       }
     });
 
