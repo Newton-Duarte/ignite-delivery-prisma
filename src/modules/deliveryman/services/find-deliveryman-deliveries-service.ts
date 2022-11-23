@@ -6,6 +6,10 @@ export class FindDeliverymanDeliveriesService {
       where: {
         deliveryman_id
       },
+      include: {
+        client: true,
+        deliveryman: true
+      }
     });
 
     return deliveries;
