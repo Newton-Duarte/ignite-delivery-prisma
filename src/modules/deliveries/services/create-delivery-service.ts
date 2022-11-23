@@ -13,6 +13,9 @@ export class CreateDeliveryService {
         item_name,
         client_id,
         address
+      },
+      include: {
+        client: true
       }
     });
 
