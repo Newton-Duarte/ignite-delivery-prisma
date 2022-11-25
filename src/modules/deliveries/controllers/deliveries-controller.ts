@@ -5,8 +5,16 @@ import { UpdateDeliveryService } from "../services/update-delivery-service";
 
 export class DeliveriesController {
   async index(request: Request, response: Response) {
+    const { page, per_page, search, sort, sort_by } = request.query;
+
     const findPendingDeliveriesService = new FindPendingDeliveriesService();
-    const pendingDeliveries = await findPendingDeliveriesService.execute();
+    const pendingDeliveries = await findPendingDeliveriesService.execute({
+      page: Number(page) || 1,
+      per_page: Number(per_page) || 10,
+      search: String(search) || '',
+      sort: String(sort) || 'DESC',
+      sort_by: String(sort_by) || 'created_at'
+    });
     return response.json(pendingDeliveries);
   }
 
