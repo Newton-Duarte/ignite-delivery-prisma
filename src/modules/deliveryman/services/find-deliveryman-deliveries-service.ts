@@ -7,6 +7,11 @@ interface IRequest {
 }
 export class FindDeliverymanDeliveriesService {
   async execute({ deliveryman_id, page, per_page = 5 }: IRequest) {
+    const totalDeliveries = await prisma.deliveries.count({
+      where: {
+        deliveryman_id
+      },
+    })
     const deliveries = await prisma.deliveries.findMany({
       where: {
         deliveryman_id
@@ -19,6 +24,6 @@ export class FindDeliverymanDeliveriesService {
       }
     });
 
-    return deliveries;
+    return { data: deliveries, total: totalDeliveries };
   }
 }
