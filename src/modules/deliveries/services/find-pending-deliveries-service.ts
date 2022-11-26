@@ -32,6 +32,6 @@ export class FindPendingDeliveriesService {
       }
     });
 
-    return { deliveries: pendingDeliveries, total: totalDeliveries };
+    return { data: pendingDeliveries, total: totalDeliveries };
   }
 }
