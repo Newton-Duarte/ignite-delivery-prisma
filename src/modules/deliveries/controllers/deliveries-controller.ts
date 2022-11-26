@@ -12,8 +12,8 @@ export class DeliveriesController {
       page: Number(page) || 1,
       per_page: Number(per_page) || 10,
       search: String(search) || '',
-      sort: String(sort) || 'DESC',
-      sort_by: String(sort_by) || 'created_at'
+      sort: sort ? String(sort) : 'desc',
+      sort_by: sort_by ? String(sort_by) : 'created_at'
     });
     return response.json(pendingDeliveries);
   }
