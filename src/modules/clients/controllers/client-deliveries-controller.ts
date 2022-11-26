@@ -3,10 +3,11 @@ import { FindClientDeliveriesService } from "../services/find-client-deliveries-
 
 export class ClientDeliveriesController {
   async index(request: Request, response: Response) {
+    const { page } = request.query;
     const { client_id } = request;
 
     const findClientDeliveriesService = new FindClientDeliveriesService();
-    const clientDeliveries = await findClientDeliveriesService.execute(client_id);
+    const clientDeliveries = await findClientDeliveriesService.execute({ client_id, page: Number(page) || 1 });
 
     return response.json(clientDeliveries);
   }
