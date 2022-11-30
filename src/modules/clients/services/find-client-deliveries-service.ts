@@ -13,12 +13,44 @@ export class FindClientDeliveriesService {
   async execute({ client_id, page, per_page = 5, sort, sort_by, search }: IRequest) {
     const totalDeliveries = await prisma.deliveries.count({
       where: {
-        client_id
+        client_id,
+        OR: [
+          {
+            deliveryman: {
+              name: {
+                contains: search,
+                mode: 'insensitive'
+              }
+            },
+          },
+          {
+            item_name: {
+              contains: search,
+              mode: 'insensitive'
+            },
+          }
+        ]
       }
     })
     const deliveries = await prisma.deliveries.findMany({
       where: {
-        client_id
+        client_id,
+        OR: [
+          {
+            deliveryman: {
+              name: {
+                contains: search,
+                mode: 'insensitive'
+              }
+            },
+          },
+          {
+            item_name: {
+              contains: search,
+              mode: 'insensitive'
+            },
+          }
+        ]
       },
       include: {
         client: true,
