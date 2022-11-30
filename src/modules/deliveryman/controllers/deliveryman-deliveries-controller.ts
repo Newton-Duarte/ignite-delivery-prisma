@@ -12,8 +12,8 @@ export class DeliverymanDeliveriesController {
         deliveryman_id,
         page: Number(page) || 1,
         per_page: Number(per_page) || 5,
-        sort: String(sort) || 'desc',
-        sort_by: String(sort_by) || 'created_at',
+        sort: sort ? String(sort) : 'desc',
+        sort_by: sort_by ? String(sort_by) : 'created_at',
         search: search ? String(search) : ''
       });
 
