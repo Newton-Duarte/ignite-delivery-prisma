@@ -58,7 +58,7 @@ export class FindDeliverymanDeliveriesService {
       skip: (page - 1) * per_page,
       take: per_page,
       orderBy: {
-        [sort_by]: sort
+        [sort_by]: sort_by === 'client' ? { name: sort } : sort
       }
     });
 
