@@ -101,6 +101,7 @@ List
 `GET` `http://localhost:3333/clients/deliveries`
 
 `Authorization Header:` Bearer token  
+
 Params  
 ```json
 {
@@ -118,6 +119,7 @@ List
 `GET` `http://localhost:3333/deliverymen/deliveries`
 
 `Authorization Header:` Bearer token  
+
 Params  
 ```json
 {
@@ -162,6 +164,7 @@ Update delivery deliveryman (When the deliveryman accepts the delivery)
 `PUT` `http://localhost:3333/deliveries/:delivery_id`
 
 `Authorization Header:` Bearer token  
+
 Body  
 No body, send just the delivery_id on request params and the Authorization header of an Deliveryman user
 
@@ -169,5 +172,6 @@ Update delivery end date (When the deliveryman delivery the item)
 `PUT` `http://localhost:3333/deliveries/:delivery_id`
 
 `Authorization Header:` Bearer token  
+
 Body  
 No body, send just the delivery_id on request params and the Authorization header of an Deliveryman user
