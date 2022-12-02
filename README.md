@@ -38,7 +38,6 @@ or
 
 Sign Up  
 `POST` `http://localhost:3333/clients`
-
 Body
 ```json
 {
@@ -51,7 +50,6 @@ Body
 
 Login  
 `POST` `http://localhost:3333/clients/authenticate`
-
 Body  
 ```json
 {
@@ -62,13 +60,12 @@ Body
 
 Me  
 `GET` `http://localhost:3333/clients/me`
-Authorization: Bearer <token>
+`Authorization Header:` Bearer token
 
 #### Deliveryman Auth routes
 
 Sign Up  
 `POST` `http://localhost:3333/deliverymen`
-
 Body  
 ```json
 {
@@ -80,7 +77,6 @@ Body
 
 Login  
 `POST` `http://localhost:3333/deliverymen/authenticate`
-
 Body  
 ```json
 {
@@ -91,13 +87,13 @@ Body
 
 Me  
 `GET` `http://localhost:3333/clients/me`
-Authorization: Bearer <token>
+`Authorization Header:` Bearer token
 
 #### Client Deliveries routes
 
 List  
 `GET` `http://localhost:3333/clients/deliveries`
-Authorization: Bearer <token>
+`Authorization Header:` Bearer token
 Params  
 ```json
 {
@@ -113,7 +109,7 @@ Params
 
 List  
 `GET` `http://localhost:3333/deliverymen/deliveries`
-Authorization: Bearer <token>
+`Authorization Header:` Bearer token
 Params  
 ```json
 {
@@ -142,7 +138,7 @@ Params
 
 Create  
 `POST` `http://localhost:3333/deliveries`
-Authorization: Bearer <token>
+`Authorization Header:` Bearer token
 Body  
 ```json
 {
@@ -153,12 +149,12 @@ Body
 
 Update delivery deliveryman (When the deliveryman accepts the delivery)  
 `PUT` `http://localhost:3333/deliveries/:delivery_id`
-Authorization: Bearer <token>  
+`Authorization Header:` Bearer token  
 Body  
 No body, send just the delivery_id on request params and the Authorization header of an Deliveryman user
 
 Update delivery end date (When the deliveryman delivery the item)  
 `PUT` `http://localhost:3333/deliveries/:delivery_id`
-Authorization: Bearer <token>  
+`Authorization Header:` Bearer token  
 Body  
 No body, send just the delivery_id on request params and the Authorization header of an Deliveryman user
