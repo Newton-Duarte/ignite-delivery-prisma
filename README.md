@@ -2,6 +2,10 @@
 
 This project was created to learn Prisma ORM with Node.js and TypeScript
 
+## Frontend project for this API
+
+https://github.com/Newton-Duarte/ignite-delivery-web
+
 ## How to run this project
 
 #### Install dependencies
@@ -105,7 +109,7 @@ List
 Params  
 ```json
 {
-	"page": 1,
+  "page": 1,
   "per_page": 5,
   "search": "",
   "sort_by": "created_at",
