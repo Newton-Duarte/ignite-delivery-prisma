@@ -36,8 +36,8 @@ or
 
 #### Client Auth routes
 
-Sign Up
-POST `http://localhost:3333/clients`
+Sign Up  
+`POST` `http://localhost:3333/clients`
 
 Body
 ```json
@@ -49,9 +49,10 @@ Body
 }
 ```
 
-Login
-POST `http://localhost:3333/clients/authenticate`
-Body
+Login  
+`POST` `http://localhost:3333/clients/authenticate`
+
+Body  
 ```json
 {
 	"username": "myusername",
@@ -59,15 +60,16 @@ Body
 }
 ```
 
-Me
-GET `http://localhost:3333/clients/me`
+Me  
+`GET` `http://localhost:3333/clients/me`
 Authorization: Bearer <token>
 
 #### Deliveryman Auth routes
 
-Sign Up
-POST `http://localhost:3333/deliverymen`
-Body
+Sign Up  
+`POST` `http://localhost:3333/deliverymen`
+
+Body  
 ```json
 {
 	"name": "My Name",
@@ -76,9 +78,10 @@ Body
 }
 ```
 
-Login
-POST `http://localhost:3333/deliverymen/authenticate`
-Body
+Login  
+`POST` `http://localhost:3333/deliverymen/authenticate`
+
+Body  
 ```json
 {
 	"username": "myusername",
@@ -86,17 +89,16 @@ Body
 }
 ```
 
-Me
-GET `http://localhost:3333/clients/me`
+Me  
+`GET` `http://localhost:3333/clients/me`
 Authorization: Bearer <token>
 
 #### Client Deliveries routes
 
-List
-GET `http://localhost:3333/clients/deliveries`
-
+List  
+`GET` `http://localhost:3333/clients/deliveries`
 Authorization: Bearer <token>
-Params
+Params  
 ```json
 {
 	"page": 1,
@@ -109,11 +111,10 @@ Params
 
 #### Deliveryman Deliveries routes
 
-List
-GET `http://localhost:3333/deliverymen/deliveries`
-
+List  
+`GET` `http://localhost:3333/deliverymen/deliveries`
 Authorization: Bearer <token>
-Params
+Params  
 ```json
 {
 	"page": 1,
@@ -126,10 +127,9 @@ Params
 
 #### Deliveries routes
 
-List
-GET `http://localhost:3333/deliveries`
-
-Params
+List 
+`GET` `http://localhost:3333/deliveries`
+Params  
 ```json
 {
 	"page": 1,
@@ -140,10 +140,10 @@ Params
 }
 ```
 
-Create
-POST `http://localhost:3333/deliveries`
+Create  
+`POST` `http://localhost:3333/deliveries`
 Authorization: Bearer <token>
-Body
+Body  
 ```json
 {
 	"item_name": "Item to be delivered",
@@ -151,14 +151,14 @@ Body
 }
 ```
 
-Update delivery deliveryman (When the deliveryman accepts the delivery)
-PUT `http://localhost:3333/deliveries/:delivery_id`
-Authorization: Bearer <token>
-Body
+Update delivery deliveryman (When the deliveryman accepts the delivery)  
+`PUT` `http://localhost:3333/deliveries/:delivery_id`
+Authorization: Bearer <token>  
+Body  
 No body, send just the delivery_id on request params and the Authorization header of an Deliveryman user
 
-Update delivery end date (When the deliveryman delivery the item)
-PUT `http://localhost:3333/deliveries/:delivery_id`
-Authorization: Bearer <token>
-Body
+Update delivery end date (When the deliveryman delivery the item)  
+`PUT` `http://localhost:3333/deliveries/:delivery_id`
+Authorization: Bearer <token>  
+Body  
 No body, send just the delivery_id on request params and the Authorization header of an Deliveryman user
