@@ -170,7 +170,7 @@ Update delivery deliveryman (When the deliveryman accepts the delivery)
 `Authorization Header:` Bearer token  
 
 Body  
-No body, send just the delivery_id on request params and the Authorization header of an Deliveryman user
+No body, just send the delivery_id on request params and the Authorization header of an Deliveryman user
 
 Update delivery end date (When the deliveryman delivery the item)  
 `PUT` `http://localhost:3333/deliveries/:delivery_id`
@@ -178,4 +178,4 @@ Update delivery end date (When the deliveryman delivery the item)
 `Authorization Header:` Bearer token  
 
 Body  
-No body, send just the delivery_id on request params and the Authorization header of an Deliveryman user
+No body, just send the delivery_id on request params and the Authorization header of an Deliveryman user
